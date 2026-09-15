@@ -1,4 +1,6 @@
 export default function Banner() {
+  const baseUrl = import.meta.env.BASE_URL
+
   return (
     <section className="hero">
       <div className="hero-content">
@@ -9,12 +11,12 @@ export default function Banner() {
             Portable, powerful solar generators designed for maximum reliability and expandability.
             Our custom-built solutions are repairable, upgradeable, and built to last.
           </p>
-          <a href="/solar" className="cta-button">
+          <a href={`${baseUrl}solar`} className="cta-button">
             Explore Our Generators
           </a>
         </div>
         <div className="hero-image">
-          <img src="/images/balcony.png" alt="Sparkwave Solar Generator" />
+          <img src={`${baseUrl}images/balcony.png`} alt="Sparkwave Solar Generator" />
         </div>
       </div>
     </section>

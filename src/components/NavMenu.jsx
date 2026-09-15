@@ -10,6 +10,7 @@ const links = [
 export default function NavMenu() {
   const [open, setOpen] = useState(false)
   const { pathname } = useLocation()
+  const baseUrl = import.meta.env.BASE_URL
 
   useEffect(() => setOpen(false), [pathname])
 
@@ -17,8 +18,7 @@ export default function NavMenu() {
     <nav className="navbar">
       <div className="navbar-container">
         <Link className="brand" to="/">
-          <img src="/images/Sparkwave Tech Logo.svg" alt="Sparkwave" />
-          <span className="brand-text">SPARKWAVE</span>
+          <img src={`${baseUrl}images/Sparkwave Tech Logo.svg`} alt="Sparkwave" />
         </Link>
 
         <button

@@ -4,6 +4,7 @@ import usePageTitle from '../usePageTitle.js'
 
 export default function Home() {
   usePageTitle('SPARKWAVE')
+  const baseUrl = import.meta.env.BASE_URL
 
   const features = [
     {
@@ -44,7 +45,7 @@ export default function Home() {
       <section className="section">
         <div className="container">
           <div className="responsive-container">
-            <img src="/images/balcony.png" alt="Generator front view" className="responsive-image" />
+            <img src={`${baseUrl}images/balcony.png`} alt="Generator front view" className="responsive-image" />
             <div className="responsive-text">
               <h3>Why Choose Solar Generators?</h3>
               <p>

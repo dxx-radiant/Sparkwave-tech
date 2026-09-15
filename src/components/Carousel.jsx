@@ -3,6 +3,7 @@ import { useState } from 'react'
 export default function Carousel({ images }) {
   const [index, setIndex] = useState(0)
   const count = images.length
+  const baseUrl = import.meta.env.BASE_URL
   const go = (step) => setIndex((i) => (i + step + count) % count)
 
   return (
@@ -13,7 +14,7 @@ export default function Carousel({ images }) {
           className={`carousel-image${i === index ? ' active' : ''}`}
           aria-hidden={i !== index}
         >
-          <img src={img.src} alt={img.alt} />
+          <img src={`${baseUrl}${img.src.startsWith('/') ? img.src.slice(1) : img.src}`} alt={img.alt} />
         </div>
       ))}
       {count > 1 && (
