@@ -1,0 +1,175 @@
+/*
+  Approximation of the current site's look (Blazor template layout + green accent).
+  For an exact match, copy rules from the live site's css/app.css and
+  SparkwaveTech.styles.css into this file.
+*/
+:root {
+  --green: #15ae4b;
+  --green-dark: #0f8a3b;
+  --ink: #1d1d1d;
+  --sidebar-bg: #1b1b1b;
+  --muted: #555;
+  --paper: #ffffff;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; background: var(--paper); }
+img { max-width: 100%; }
+a { color: var(--green-dark); }
+h3 { margin: 0 0 0.75rem; font-weight: 700; }
+p { margin: 0 0 1rem; }
+:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
+
+/* ---------- Layout ---------- */
+.page { display: flex; flex-direction: column; min-height: 100vh; }
+main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.content { flex: 1; }
+
+.sidebar { background: var(--sidebar-bg); }
+
+.top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3.5rem;
+  padding: 0.5rem 1rem;
+}
+.brand img { display: block; max-height: 3rem; }
+
+.nav-toggler {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 0.35rem 0.6rem;
+  cursor: pointer;
+}
+.nav-toggler-icon {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: no-repeat center / 100%
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,0.7%29' stroke-linecap='round' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.site-nav { display: none; flex-direction: column; padding: 0.5rem 1rem 1rem; }
+.site-nav.open { display: flex; }
+
+.nav-link {
+  display: block;
+  color: #d7d7d7;
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 0.25rem;
+}
+.nav-link:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
+.nav-link.active { background: rgba(255, 255, 255, 0.18); color: #fff; }
+
+@media (min-width: 641px) {
+  .page { flex-direction: row; }
+  .sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+  }
+  .nav-toggler { display: none; }
+  .site-nav { display: flex; }
+}
+
+/* ---------- Shared pieces ---------- */
+.section { padding: 2rem; }
+.section-tight { padding-top: 0; }
+.section p, .responsive-text p { max-width: 75ch; }
+
+.bolded { font-weight: 700; margin-top: 1rem; }
+
+.banner {
+  background: linear-gradient(120deg, #111 0%, #1f3d2a 60%, var(--green) 140%);
+  min-height: 14rem;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+}
+.banner-text {
+  color: #fff;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+}
+
+.blackbar { background: #000; height: 1.5rem; }
+
+.site-footer {
+  background: var(--green);
+  color: #fff;
+  min-height: 5rem;
+  padding: 1rem;
+  text-align: center;
+}
+.site-footer a { color: #fff; }
+
+/* ---------- Home ---------- */
+.responsive-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+.responsive-image { width: 100%; max-width: 20rem; }
+@media (min-width: 900px) {
+  .responsive-container { flex-direction: row; align-items: flex-start; }
+}
+
+/* ---------- Solar ---------- */
+.product { display: flex; flex-direction: column; }
+.product-media { max-width: 25rem; }
+.product-name { font-size: 14pt; padding: 0 2rem 2rem; }
+.description { padding: 2rem; flex: 1; }
+@media (min-width: 768px) {
+  .product { flex-direction: row; }
+}
+
+.price-row { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+.price { font-size: 25pt; font-weight: 600; color: var(--green); }
+
+.buttonStyle {
+  display: inline-block;
+  background: var(--green);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.6rem 1.75rem;
+  border-radius: 6px;
+}
+.buttonStyle:hover { background: var(--green-dark); }
+
+.carousel-container {
+  position: relative;
+  width: 20rem;
+  max-width: calc(100% - 4rem);
+  margin: 0 2rem;
+}
+.carousel-image { display: none; width: 100%; padding: 2rem; }
+.carousel-image.active { display: block; }
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.carousel-button:hover { background: rgba(0, 0, 0, 0.75); }
+.prev-button { left: 0; }
+.next-button { right: 0; }
