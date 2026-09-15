@@ -5,9 +5,7 @@ import Footer from './Footer.jsx'
 export default function Layout() {
   return (
     <div className="page">
-      <aside className="sidebar">
-        <NavMenu />
-      </aside>
+      <NavMenu />
       <main>
         <article className="content">
           <Outlet />

@@ -8,13 +8,13 @@ export default function Carousel({ images }) {
   return (
     <div className="carousel-container" aria-roledescription="carousel">
       {images.map((img, i) => (
-        <img
+        <div
           key={img.src}
-          src={img.src}
-          alt={img.alt}
           className={`carousel-image${i === index ? ' active' : ''}`}
           aria-hidden={i !== index}
-        />
+        >
+          <img src={img.src} alt={img.alt} />
+        </div>
       ))}
       {count > 1 && (
         <>
