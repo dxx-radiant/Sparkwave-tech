@@ -45,7 +45,7 @@ export default function Home() {
       <section className="section">
         <div className="container">
           <div className="responsive-container">
-            <img src={`${baseUrl}images/balcony.png`} alt="Generator front view" className="responsive-image" />
+            <img src={`${baseUrl}images/solar-terrace.png`} alt="Portable solar generator and panels on a terrace at sunset" className="responsive-image" />
             <div className="responsive-text">
               <h3>Why Choose Solar Generators?</h3>
               <p>
