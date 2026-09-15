@@ -12,8 +12,9 @@ export const solarGenerator = {
   price: '$2,499',
   squareLink: 'https://square.link/u/swQWnaGB',
   images: [
-    { src: '/images/generator-front.png', alt: 'Generator front view' },
-    { src: '/images/generator-side.jpg', alt: 'Generator side view' },
+    { src: '/images/balcony.png', alt: 'Generator front view' },
+    { src: '/images/sg side.jpg', alt: 'Generator side view' },
+    { src: '/images/sg side 2.jpg', alt: 'Generator side view 2' },
   ],
   specs: [
     { label: 'Batteries', lines: ['2 x 12V fully enclosed LiFePo (3000 cycles charge/discharge)'] },

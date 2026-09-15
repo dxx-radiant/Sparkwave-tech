@@ -11,32 +11,36 @@ export default function NavMenu() {
   const [open, setOpen] = useState(false)
   const { pathname } = useLocation()
 
-  // Close the mobile menu after navigating
   useEffect(() => setOpen(false), [pathname])
 
   return (
-    <>
-      <div className="top-row">
+    <nav className="navbar">
+      <div className="navbar-container">
         <Link className="brand" to="/">
-          <img src="/images/sparkwave-logo.svg" alt="Sparkwave" />
+          <img src="/images/Sparkwave Tech Logo.svg" alt="Sparkwave" />
+          <span className="brand-text">SPARKWAVE</span>
         </Link>
+
         <button
           className="nav-toggler"
-          aria-label="Navigation menu"
+          aria-label="Toggle navigation"
           aria-expanded={open}
           aria-controls="site-nav"
           onClick={() => setOpen((o) => !o)}
         >
-          <span className="nav-toggler-icon" />
+          {open ? '✕' : '☰'}
         </button>
+
+        <ul id="site-nav" className={`nav-menu${open ? ' open' : ''}`}>
+          {links.map(({ to, label, end }) => (
+            <li key={to}>
+              <NavLink to={to} end={end} className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>
+                {label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
       </div>
-      <nav id="site-nav" className={`site-nav${open ? ' open' : ''}`}>
-        {links.map(({ to, label, end }) => (
-          <NavLink key={to} to={to} end={end} className="nav-link">
-            {label}
-          </NavLink>
-        ))}
-      </nav>
-    </>
+    </nav>
   )
 }
