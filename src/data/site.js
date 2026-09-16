@@ -17,7 +17,7 @@ export const solarGenerator = {
   ],
   specs: [
     { label: 'Batteries', lines: ['2 x 12V fully enclosed LiFePo (7000 cycles charge/discharge)'] },
-    { label: 'Power', lines: ['7200Wh | 24V | 320Ah'] },
+    { label: 'Power', lines: ['7680Wh | 24V | 320Ah'] },
     {
       label: 'Display',
       lines: [
