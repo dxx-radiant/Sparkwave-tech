@@ -4,6 +4,7 @@ import { solarGenerator as p } from '../data/site.js'
 
 export default function Solar() {
   usePageTitle('SOLAR GENERATOR')
+  const baseUrl = import.meta.env.BASE_URL
   return (
     <>
       <section className="product-section">
@@ -51,6 +52,34 @@ export default function Solar() {
           ))}
           <div style={{ marginTop: '2rem', padding: '1.5rem', backgroundColor: 'var(--dark-card)', borderRadius: '8px', borderLeft: '4px solid var(--green)' }}>
             <p style={{ margin: 0, fontStyle: 'italic' }}>{p.note}</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="everyday-power-heading">
+        <div className="container">
+          <div className="responsive-container">
+            <img
+              src={`${baseUrl}images/solar-terrace.png`}
+              alt="Portable solar power station and panels on a modern terrace at sunset"
+              className="responsive-image"
+              style={{ height: 'auto' }}
+              width="1254"
+              height="1254"
+              loading="lazy"
+            />
+            <div className="responsive-text">
+              <h3 id="everyday-power-heading">Power for Everyday Living</h3>
+              <p>
+                From quiet afternoons on the patio to weekends away, portable solar power
+                brings energy closer to where you need it. Capture sunlight during the day
+                and store it for later.
+              </p>
+              <p>
+                Plan your setup around the devices you use, the space you have for panels,
+                and the battery capacity you need.
+              </p>
+            </div>
           </div>
         </div>
       </section>
