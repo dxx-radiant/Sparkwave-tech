@@ -9,27 +9,28 @@ export const contact = {
 // payment link in the Square dashboard and paste it into squareLink.
 export const solarGenerator = {
   name: 'Electric Solar Generator',
-  price: '$2,499',
+  price: '$3,499',
   squareLink: 'https://square.link/u/swQWnaGB',
   images: [
     { src: '/images/face.png', alt: 'Generator front view' },
-    { src: '/images/sg side.jpg', alt: 'Generator side view' },
+    { src: '/images/rolling-toolbox-transparent.png', alt: 'Generator side view' },
   ],
   specs: [
-    { label: 'Batteries', lines: ['2 x 12V fully enclosed LiFePo (3000 cycles charge/discharge)'] },
-    { label: 'Power', lines: ['3000w | 24V | 100Ah'] },
+    { label: 'Batteries', lines: ['2 x 12V fully enclosed LiFePo (7000 cycles charge/discharge)'] },
+    { label: 'Power', lines: ['7200Wh | 24V | 320Ah'] },
     {
       label: 'Display',
       lines: [
         '4 x 120V outlets (20 amps)',
         '4 x USB 3.0 outlets',
+        '2 x USB C outlets',
         'Amp and Voltage meters',
         '(other configurations available upon request)',
       ],
     },
     {
       label: 'Approximate dimensions',
-      lines: ['Weight: 80 lbs', 'Size: 22" Wide, 27" Height, 20" Deep'],
+      lines: ['Weight: 125 lbs', 'Size: 22" Wide, 27" Height, 20" Deep'],
     },
   ],
   features: [
