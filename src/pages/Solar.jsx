@@ -1,43 +1,76 @@
+import { useState } from 'react'
 import Carousel from '../components/Carousel.jsx'
 import usePageTitle from '../usePageTitle.js'
-import { solarGenerator as p } from '../data/site.js'
+import { solarGenerators, solarFeatures as p } from '../data/site.js'
 
-export default function Solar() {
-  usePageTitle('SOLAR GENERATOR')
-  const baseUrl = import.meta.env.BASE_URL
+function Product({ product }) {
+  const comingSoon = !product.price && !product.squareLink && product.specs.length === 0
   return (
-    <>
-      <section className="product-section">
-        <div className="container">
-          <div className="product">
-            <div className="product-media">
-              <Carousel images={p.images} />
-              <div className="product-name">{p.name}</div>
-            </div>
+    <div className="product">
+      <div className="product-media">
+        {/* key resets the carousel to the first image when switching tabs */}
+        <Carousel key={product.name} images={product.images} />
+        <div className="product-name">{product.name}</div>
+      </div>
 
-            <div className="description">
-              <div className="price-row">
-                <div className="price">{p.price}</div>
-                <a className="buttonStyle" href={p.squareLink} target="_blank" rel="noopener noreferrer">
-                  Purchase Now
-                </a>
-              </div>
+      <div className="description">
+        {(product.price || product.squareLink) && (
+          <div className="price-row">
+            {product.price && <div className="price">{product.price}</div>}
+            {product.squareLink && (
+              <a className="buttonStyle" href={product.squareLink} target="_blank" rel="noopener noreferrer">
+                Purchase Now
+              </a>
+            )}
+          </div>
+        )}
 
-              <div className="specs-section">
-                {p.specs.map((s) => (
-                  <div key={s.label} className="spec-item">
-                    <div className="bolded">{s.label}</div>
-                    <div>
-                      {s.lines.map((line) => (
-                        <div key={line} style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>
-                          {line}
-                        </div>
-                      ))}
-                    </div>
+        {comingSoon && <p className="coming-soon">Details coming soon</p>}
+
+        <div className="specs-section">
+          {product.specs.map((s) => (
+            <div key={s.label} className="spec-item">
+              <div className="bolded">{s.label}</div>
+              <div>
+                {s.lines.map((line) => (
+                  <div key={line} style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>
+                    {line}
                   </div>
                 ))}
               </div>
             </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default function Solar() {
+  usePageTitle('SOLAR GENERATOR')
+  const baseUrl = import.meta.env.BASE_URL
+  const [active, setActive] = useState(0)
+  return (
+    <>
+      <section className="product-section">
+        <div className="container">
+          <div className="product-tabs" role="tablist" aria-label="Solar generators">
+            {solarGenerators.map((product, i) => (
+              <button
+                key={product.name}
+                role="tab"
+                id={`product-tab-${i}`}
+                aria-selected={i === active}
+                aria-controls="product-panel"
+                className={`product-tab${i === active ? ' active' : ''}`}
+                onClick={() => setActive(i)}
+              >
+                {product.name}
+              </button>
+            ))}
+          </div>
+          <div role="tabpanel" id="product-panel" aria-labelledby={`product-tab-${active}`}>
+            <Product product={solarGenerators[active]} />
           </div>
         </div>
       </section>
