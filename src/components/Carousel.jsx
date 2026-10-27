@@ -14,7 +14,11 @@ export default function Carousel({ images }) {
           className={`carousel-image${i === index ? ' active' : ''}`}
           aria-hidden={i !== index}
         >
-          <img src={`${baseUrl}${img.src.startsWith('/') ? img.src.slice(1) : img.src}`} alt={img.alt} />
+          <img
+            src={`${baseUrl}${img.src.startsWith('/') ? img.src.slice(1) : img.src}`}
+            alt={img.alt}
+            className={img.fadeEdges ? 'fade-edges' : undefined}
+          />
         </div>
       ))}
       {count > 1 && (

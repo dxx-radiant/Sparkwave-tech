@@ -5,14 +5,18 @@ export const contact = {
   phone: '801-691-9497',
 }
 
-// Edit the products here; each one shows side by side on the Solar page.
-// To change the price or checkout, create a new payment link in the Square
-// dashboard and paste it into squareLink. Leave price, squareLink or specs
-// empty and the page shows "Details coming soon" instead.
+// Edit the products here. Each one gets a card on the Solar page; picking a
+// card shows its full specs and Purchase button. `id` is used in the page
+// address (e.g. /solar?product=stacked) and `highlights` are the short points
+// shown on the card. To change the price or checkout, create a new payment link
+// in the Square dashboard and paste it into squareLink. Leave price, squareLink
+// or specs empty and the page shows "Details coming soon" instead.
 export const solarGenerators = [
   {
+    id: 'electric',
     name: 'Electric Solar Generator',
     price: '$3,499',
+    highlights: ['7,680Wh battery, expandable to 23kWh','3kW continuous AC power', '4 x 120V outlets + USB & USB-C'],
     squareLink: 'https://square.link/u/swQWnaGB',
     images: [
       { src: '/images/face.png', alt: 'Generator front view' },
@@ -38,13 +42,14 @@ export const solarGenerators = [
     ],
   },
   {
-    // TODO: fill in the real name, and replace squareLink with this product's own
-    // payment link (it currently reuses the first generator's link).
+    id: 'stacked',
     name: 'Stacked Solar Generator',
     price: '$5,999',
-    squareLink: 'https://square.link/u/swQWnaGB',
+    highlights: ['7,680Wh battery, expandable to 23kWh','6kW continuous AC power', '240V 30A outlet + 2 x 120V outlets'],
+    squareLink: 'https://square.link/u/XWXsyaKJ',
     images: [
-      { src: '/images/sg-stacked.png', alt: 'Stacked generator with expansion battery module' },
+      // fadeEdges blends a photo's own studio background into the page's backdrop
+      { src: '/images/sg-stacked.png', alt: 'Stacked generator with expansion battery module', fadeEdges: true },
     ],
     specs: [
       { label: 'Batteries', lines: ['2 x 12V fully enclosed LiFePo (7000 cycles charge/discharge)'] },
