@@ -167,7 +167,7 @@ export default function Solar() {
         <div className="container">
           <div className="responsive-container">
             <img
-              src={`${baseUrl}images/solar-terrace.png`}
+              src={`${baseUrl}images/SparkWave%20Generator%20on%20a%20Solar%20Terrace.png`}
               alt="Portable solar power station and panels on a modern terrace at sunset"
               className="responsive-image"
               style={{ height: 'auto' }}
