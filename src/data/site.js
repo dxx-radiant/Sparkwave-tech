@@ -14,7 +14,7 @@ export const contact = {
 export const solarGenerators = [
   {
     id: 'electric',
-    name: 'Electric Solar Generator',
+    name: '3Kw Solar Generator',
     price: '$3,499',
     highlights: ['7,680Wh battery, expandable to 23kWh','3kW continuous AC power', '4 x 120V outlets + USB & USB-C'],
     squareLink: 'https://square.link/u/swQWnaGB',
@@ -24,7 +24,7 @@ export const solarGenerators = [
     ],
     specs: [
       { label: 'Batteries', lines: ['2 x 12V fully enclosed LiFePo (7000 cycles charge/discharge)'] },
-      { label: 'Power', lines: ['7680Wh | 24V | 320Ah battery', 'Up to 23kWh | 24V | 320Ah batteries', '3kW continuous AC power'] },
+      { label: 'Power', lines: ['7680Wh | 24V | 320Ah battery', 'Up to 23kWh | 24V | 320Ah batteries', '3Kw continuous AC power'] },
       {
         label: 'Output',
         lines: [
@@ -43,9 +43,9 @@ export const solarGenerators = [
   },
   {
     id: 'stacked',
-    name: 'Stacked Solar Generator',
+    name: '6Kw Solar Generator',
     price: '$5,999',
-    highlights: ['7,680Wh battery, expandable to 23kWh','6kW continuous AC power', '240V 30A outlet + 2 x 120V outlets'],
+    highlights: ['7,680Wh battery, expandable to 23kWh','6Kw continuous AC power', '240V 30A outlet + 2 x 120V outlets'],
     squareLink: 'https://square.link/u/XWXsyaKJ',
     images: [
       // fadeEdges blends a photo's own studio background into the page's backdrop
@@ -55,7 +55,7 @@ export const solarGenerators = [
       { label: 'Batteries', lines: ['2 x 12V fully enclosed LiFePo (7000 cycles charge/discharge)'] },
       {
         label: 'Power',
-        lines: ['7680Wh | 24V | 320Ah battery', 'Up to 23kWh | 24V | 320Ah batteries', '6kW continuous AC power'],
+        lines: ['7680Wh | 24V | 320Ah battery', 'Up to 23kWh | 24V | 320Ah batteries', '6Kw continuous AC power'],
       },
       {
         label: 'Output',
